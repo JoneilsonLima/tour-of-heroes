@@ -11,6 +11,10 @@ import { MessageService } from '../service/message.service';
 })
 export class HeroesComponent implements OnInit {
   public heroes: Hero[] = [];
+  public displayedColumns: string[] = [
+    'id',
+    'name'
+  ]
 
   constructor(
     private heroService: HeroService) {}
