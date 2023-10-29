@@ -4,8 +4,13 @@
   justify-content: space-between;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .content-dashboard {
     flex-direction: column;
   }
 }
+
