@@ -22,7 +22,7 @@ import { CoreModule } from './core/core.module';
     FormsModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    CoreModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

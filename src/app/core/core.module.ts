@@ -24,6 +24,8 @@ const COMPONENTS = [
 })
 export class CoreModule {
     constructor(@Optional() @SkipSelf() parentModule?: CoreModule) {
-      throw new Error('CoreModule has already been loaded. Import this module in the AppModule.')
+      if (parentModule) {
+        throw new Error('CoreModule has already been loaded. Import this module in the AppModule.');
+      }
     }
 }
