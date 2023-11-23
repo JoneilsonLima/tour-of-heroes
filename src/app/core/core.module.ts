@@ -4,10 +4,17 @@ import { MaterialModule } from '../material/material.module';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { RouterModule } from '@angular/router';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 const COMPONENTS = [
   MessagesComponent,
-  ToolbarComponent
+  ToolbarComponent,
+  PageNotFoundComponent
+]
+
+const MODULES = [
+  MaterialModule,
+  COMPONENTS
 ]
 
 @NgModule({
@@ -17,10 +24,7 @@ const COMPONENTS = [
     CommonModule,
     RouterModule
   ],
-  exports: [
-    MaterialModule,
-    COMPONENTS
-  ]
+  exports: [MODULES]
 })
 export class CoreModule {
     constructor(@Optional() @SkipSelf() parentModule?: CoreModule) {
