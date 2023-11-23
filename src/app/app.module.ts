@@ -21,10 +21,6 @@ import { HeroesModule } from './heroes/heroes.module';
     FormsModule,
     BrowserAnimationsModule,
 
-    // Feature
-    DashboardModule,
-    HeroesModule,
-
     // App
     AppRoutingModule,
     CoreModule
