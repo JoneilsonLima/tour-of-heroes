@@ -4,12 +4,13 @@ import { HEROES } from './mock-heroes';
 import { Observable, of, tap } from 'rxjs';
 import { MessageService } from './message.service';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeroService {
-  private url = 'api/heroes'
+  private url = `${environment.baseUrl}/heroes`
 
   constructor(
     private messageService: MessageService,
