@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HeroDetailComponent implements OnInit {
     public hero!: Hero;
+    public isEditing!: boolean;
 
     constructor(
       private heroService: HeroService,
@@ -23,9 +24,17 @@ export class HeroDetailComponent implements OnInit {
     }
 
     getHero(): void {
-      const id = Number(this.route.snapshot.paramMap.get('id'));
+      let paranId = this.route.snapshot.paramMap.get('id');
 
-      this.heroService.getHero(id).subscribe(hero => this.hero = hero);
+      if (paranId === 'new') {
+        this.isEditing = false;
+        this.hero = {name: ''} as Hero;
+      } else {
+        this.isEditing = false;
+        const id = Number(paranId)
+        this.heroService.getHero(id).subscribe(hero => this.hero = hero);
+      }
+
     }
 
     goBack(): void {
