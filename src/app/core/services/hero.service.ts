@@ -31,6 +31,11 @@ export class HeroService {
     );
   }
 
+  // POST /heroes
+  create(hero: Hero): Observable<Hero> {
+    return this.http.post<Hero>(this.url, hero)
+  }
+
   // PUT /hero/id
   update(hero: Hero): Observable<Hero> {
     return this.http.put<Hero>(`${this.url}/${hero.id}`, hero).pipe(
