@@ -45,7 +45,11 @@ export class HeroDetailComponent implements OnInit {
       return !!this.hero.name.trim();
     }
 
-    save(): void {
+    create(): void {
+      this.heroService.create(this.hero).subscribe(() => this.goBack());
+    }
+
+    update(): void {
       this.heroService.update(this.hero).subscribe(() => this.goBack());
     }
 }
