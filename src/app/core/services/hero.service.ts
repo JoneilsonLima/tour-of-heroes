@@ -41,8 +41,10 @@ export class HeroService {
   // PUT /hero/id
   update(hero: Hero): Observable<Hero> {
     return this.http.put<Hero>(`${this.url}/${hero.id}`, hero).pipe(
-      tap((hero) => this.log(`Updated ${this.descAttributes(hero)}`))
-    )
+      tap((hero) => {
+        this.log(`Updated ${this.descAttributes(hero)}`);
+      })
+    );
   }
 
   private descAttributes(hero: Hero): string {

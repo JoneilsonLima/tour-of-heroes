@@ -19,8 +19,8 @@
   </mat-card-content>
 
   <mat-card-actions>
-    <button color="primary" *ngIf="!isEditing" [disabled]="!isFormValid()" mat-raised-button (click)="update()">Update</button>
-    <button color="primary" *ngIf="isEditing" [disabled]="!isFormValid()" mat-raised-button (click)="update()">Create</button>
+    <button color="primary" *ngIf="!isEditing" [disabled]="!isFormValid()" mat-raised-button (click)="create()">Create</button>
+    <button color="primary" *ngIf="isEditing" [disabled]="!isFormValid()" mat-raised-button (click)="update()">Update</button>
     <button mat-raised-button (click)="goBack()">Go back</button>
   </mat-card-actions>
 </mat-card>
